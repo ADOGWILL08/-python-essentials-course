@@ -1,0 +1,2 @@
+﻿Greeting: Hello, Adrian! Welcome to the modules lab.
+Factorial of 5 is: 120

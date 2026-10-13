@@ -1,0 +1,4 @@
+﻿Random Number: 13
+Square Root (floored): 3
+Operating System: Windows
+Python Version: 3.14.5

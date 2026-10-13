@@ -1,0 +1,6 @@
+﻿Success message: colorama is installed and working!
+Error message: this text is printed in red.
+Warning message: this text is printed in yellow.
+Info message: this text is printed in cyan.
+Bright text: this line is bold and bright.
+Normal text: colors are reset back to the default.
