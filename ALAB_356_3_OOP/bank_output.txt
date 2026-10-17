@@ -1,0 +1,16 @@
+﻿Created account:
+Account 12345 - Owner: Alice, Balance: $500.00
+
+--- Deposit test ---
+After depositing $200:
+Account 12345 - Owner: Alice, Balance: $700.00
+
+--- Withdrawal test ---
+After withdrawing $150, new balance: $550.00
+Account 12345 - Owner: Alice, Balance: $550.00
+
+--- Overdraw test ---
+Error: Insufficient funds: balance is $550.00, tried to withdraw $10000.00.
+
+--- Invalid deposit test ---
+Error: Deposit amount must be positive.
