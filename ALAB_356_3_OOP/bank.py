@@ -1,3 +1,8 @@
+class InsufficientFundsError(Exception):
+    """Raised when a withdrawal is larger than the account balance."""
+    pass
+
+
 class BankAccount:
     """A simple bank account that tracks an owner and a balance."""
 
@@ -20,11 +25,12 @@ class BankAccount:
         # Reject zero or negative withdrawal amounts
         if amount <= 0:
             raise ValueError("Withdrawal amount must be positive.")
-        # Reject withdrawals bigger than the current balance (overdraft)
+        # Reject withdrawals bigger than the balance (overdraft) using
+        # our custom exception instead of a plain ValueError
         if amount > self.balance:
-            raise ValueError(
-                f"Insufficient funds: balance is ${self.balance:.2f}, "
-                f"tried to withdraw ${amount:.2f}."
+            raise InsufficientFundsError(
+                f"Insufficient funds: cannot withdraw ${amount:.2f} "
+                f"from account {self.account_number}."
             )
         self.balance -= amount
         return self.balance
@@ -35,6 +41,7 @@ class BankAccount:
             f"Account {self.account_number} - Owner: {self.owner}, "
             f"Balance: ${self.balance:.2f}"
         )
+
 
 if __name__ == "__main__":
     # Create an account for Alice with a starting balance of $500
@@ -54,11 +61,11 @@ if __name__ == "__main__":
     print(f"After withdrawing $150, new balance: ${new_balance:.2f}")
     print(account)
 
-    # Test 3: attempt to overdraw (should raise and catch an error)
+    # Test 3: attempt to overdraw (should raise our custom exception)
     print("\n--- Overdraw test ---")
     try:
         account.withdraw(10000)
-    except ValueError as error:
+    except InsufficientFundsError as error:
         print(f"Error: {error}")
 
     # Test 4: attempt a negative deposit (should raise and catch an error)

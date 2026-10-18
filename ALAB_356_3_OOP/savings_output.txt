@@ -17,4 +17,4 @@ After applying interest:
 Account 67890 - Owner: Bob, Balance: $1365.00, Interest Rate: 5%
 
 --- Overdraw test ---
-Error: Insufficient funds: balance is $1365.00, tried to withdraw $5000.00.
+Error: Insufficient funds: cannot withdraw $5000.00 from account 67890.

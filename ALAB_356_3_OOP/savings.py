@@ -1,4 +1,4 @@
-from bank import BankAccount
+from bank import BankAccount, InsufficientFundsError
 
 
 class SavingsAccount(BankAccount):
@@ -51,9 +51,9 @@ if __name__ == "__main__":
     print("After applying interest:")
     print(savings)
 
-    # Test 4: attempt to overdraw (inherited check raises, we catch it)
+    # Test 4: attempt to overdraw (inherited check raises our custom error)
     print("\n--- Overdraw test ---")
     try:
         savings.withdraw(5000)
-    except ValueError as error:
+    except InsufficientFundsError as error:
         print(f"Error: {error}")

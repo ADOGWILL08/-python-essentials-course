@@ -10,7 +10,7 @@ After withdrawing $150, new balance: $550.00
 Account 12345 - Owner: Alice, Balance: $550.00
 
 --- Overdraw test ---
-Error: Insufficient funds: balance is $550.00, tried to withdraw $10000.00.
+Error: Insufficient funds: cannot withdraw $10000.00 from account 12345.
 
 --- Invalid deposit test ---
 Error: Deposit amount must be positive.
