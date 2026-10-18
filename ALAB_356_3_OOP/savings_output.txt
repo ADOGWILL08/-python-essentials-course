@@ -1,0 +1,20 @@
+﻿Created savings account:
+Account 67890 - Owner: Bob, Balance: $1000.00, Interest Rate: 5%
+
+--- Deposit test ---
+After depositing $500:
+Account 67890 - Owner: Bob, Balance: $1500.00, Interest Rate: 5%
+
+--- Withdrawal test ---
+After withdrawing $200, new balance: $1300.00
+Account 67890 - Owner: Bob, Balance: $1300.00, Interest Rate: 5%
+
+--- Interest test ---
+Before applying interest:
+Account 67890 - Owner: Bob, Balance: $1300.00, Interest Rate: 5%
+Interest earned: $65.00
+After applying interest:
+Account 67890 - Owner: Bob, Balance: $1365.00, Interest Rate: 5%
+
+--- Overdraw test ---
+Error: Insufficient funds: balance is $1365.00, tried to withdraw $5000.00.
