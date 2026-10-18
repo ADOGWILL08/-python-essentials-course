@@ -1,0 +1,6 @@
+﻿Closure demonstration:
+times3(7) = 21
+times10(7) = 70
+times3(10) = 30
+times10(2.5) = 25.0
+Error: factor must be a number
