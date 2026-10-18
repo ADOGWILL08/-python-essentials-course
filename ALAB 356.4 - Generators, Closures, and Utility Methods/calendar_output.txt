@@ -1,0 +1,25 @@
+﻿Enter a year (for example 2025): Enter a month number (1-12): 
+=== Calendar for October 2026 ===
+           October 2026
+Sun  Mon  Tue  Wed  Thu  Fri  Sat
+                     1    2    3
+ 4    5    6    7    8    9    10
+ 11   12   13   14   15   16   17
+[18]  19   20   21   22   23   24
+ 25   26   27   28   29   30   31
+
+Today's date: October 18, 2026
+Today is October 18, 2026, shown above in [brackets].
+Enter a year (for example 2025): Enter a month number (1-12): 
+=== Calendar for March 2025 ===
+            March 2025
+Sun  Mon  Tue  Wed  Thu  Fri  Sat
+                               1
+ 2    3    4    5    6    7    8
+ 9    10   11   12   13   14   15
+ 16   17   18   19   20   21   22
+ 23   24   25   26   27   28   29
+ 30   31
+
+Today's date: October 18, 2026
+Today is not in March 2025.
