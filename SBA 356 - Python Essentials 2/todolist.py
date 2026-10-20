@@ -1,9 +1,13 @@
 """todolist.py - Functions for managing a list of Task objects."""
 
 import json
+import os
 from datetime import date, datetime
 
 from task import Task
+
+# The file where tasks are saved and loaded.
+DATA_FILE = "tasks.json"
 
 
 def _get_task(task_list, index):
@@ -91,7 +95,7 @@ def list_tasks(task_list):
         print(line)
 
 
-def save_tasks(task_list, filename="tasks.json"):
+def save_tasks(task_list, filename=DATA_FILE):
     """Save all tasks to a JSON file. Returns True on success, False on error."""
     data = []
     for task in task_list:
@@ -109,6 +113,50 @@ def save_tasks(task_list, filename="tasks.json"):
         print(f"Error: could not save tasks to '{filename}' ({error}).")
         return False
     return True
+
+
+def load_tasks(filename=DATA_FILE):
+    """Load tasks from a JSON file and return a list of Task objects.
+
+    Returns an empty list if the file does not exist or cannot be read.
+    """
+    task_list = []
+
+    # First run: there is no file yet, so there is nothing to load.
+    if not os.path.exists(filename):
+        return task_list
+
+    try:
+        with open(filename, "r", encoding="utf-8") as file:
+            data = json.load(file)
+    except ValueError:  # bad JSON text (JSONDecodeError is a kind of ValueError)
+        print(f"Error: '{filename}' is not a valid task file, so it was not loaded.")
+        return task_list
+    except OSError as error:
+        print(f"Error: could not read '{filename}' ({error}).")
+        return task_list
+
+    if not isinstance(data, list):
+        print(f"Error: '{filename}' does not contain a task list, so it was not loaded.")
+        return task_list
+
+    skipped = 0
+    for item in data:
+        try:
+            title = item["title"]
+            if not isinstance(title, str) or not title.strip():
+                raise ValueError("bad title")
+            completed = bool(item["completed"])
+            due_date = None
+            if item["due_date"]:
+                due_date = datetime.strptime(item["due_date"], "%Y-%m-%d").date()
+            task_list.append(Task(title, due_date, completed))
+        except (KeyError, TypeError, ValueError):
+            skipped += 1  # skip a damaged entry instead of crashing
+
+    if skipped:
+        print(f"Warning: skipped {skipped} unreadable task(s) in '{filename}'.")
+    return task_list
 
 
 # This block only runs when you run todolist.py directly (not when imported).

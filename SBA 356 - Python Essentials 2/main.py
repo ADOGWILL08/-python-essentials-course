@@ -1,6 +1,14 @@
 """main.py - Text-based menu for the To-Do List Manager."""
 
-from todolist import add_task, complete_task, delete_task, list_tasks, save_tasks
+from todolist import (
+    DATA_FILE,
+    add_task,
+    complete_task,
+    delete_task,
+    list_tasks,
+    load_tasks,
+    save_tasks,
+)
 
 MENU = """
 ===== To-Do List Manager =====
@@ -39,7 +47,7 @@ def ask_to_save(task_list):
         answer = answer.strip().upper()
         if answer == "Y":
             if save_tasks(task_list):
-                print("Tasks saved to tasks.json.")
+                print(f"Tasks saved to {DATA_FILE}.")
             return
         if answer == "N":
             print("Tasks were not saved.")
@@ -49,7 +57,9 @@ def ask_to_save(task_list):
 
 def main():
     """Run the menu loop until the user chooses to quit."""
-    tasks = []
+    tasks = load_tasks()
+    if tasks:
+        print(f"Loaded {len(tasks)} task(s) from {DATA_FILE}.")
 
     while True:
         print(MENU)

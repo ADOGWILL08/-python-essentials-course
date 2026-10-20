@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Submit assignment",
+    "due_date": "2025-03-10",
+    "completed": false
+  },
+  {
+    "title": "Read chapter 5",
+    "due_date": "2026-10-25",
+    "completed": true
+  },
+  {
+    "title": "Buy groceries",
+    "due_date": null,
+    "completed": true
+  },
+  {
+    "title": "Call dentist",
+    "due_date": "2026-10-30",
+    "completed": false
+  }
+]
