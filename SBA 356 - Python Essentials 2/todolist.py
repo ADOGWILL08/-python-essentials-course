@@ -1,5 +1,6 @@
 """todolist.py - Functions for managing a list of Task objects."""
 
+import json
 from datetime import date, datetime
 
 from task import Task
@@ -88,6 +89,26 @@ def list_tasks(task_list):
         if is_overdue(task):
             line += "  *** OVERDUE ***"
         print(line)
+
+
+def save_tasks(task_list, filename="tasks.json"):
+    """Save all tasks to a JSON file. Returns True on success, False on error."""
+    data = []
+    for task in task_list:
+        due = task.due_date
+        if isinstance(due, date):
+            due = due.isoformat()  # turns a date into the text "YYYY-MM-DD"
+        data.append(
+            {"title": task.title, "due_date": due, "completed": task.completed}
+        )
+
+    try:
+        with open(filename, "w", encoding="utf-8") as file:
+            json.dump(data, file, indent=2)
+    except OSError as error:
+        print(f"Error: could not save tasks to '{filename}' ({error}).")
+        return False
+    return True
 
 
 # This block only runs when you run todolist.py directly (not when imported).
