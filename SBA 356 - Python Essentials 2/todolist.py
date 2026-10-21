@@ -1,3 +1,4 @@
+# Requires colorama; install with: pip install colorama
 """todolist.py - Functions for managing a list of Task objects."""
 
 import json
@@ -6,8 +7,25 @@ from datetime import date, datetime
 
 from task import Task
 
+# colorama adds colors to the terminal. If it is not installed, the program
+# still works; the task list is just shown without colors.
+try:
+    from colorama import Fore, Style, init
+
+    init()  # makes colors work on Windows terminals
+    COLORS_ON = True
+except ImportError:
+    COLORS_ON = False
+
 # The file where tasks are saved and loaded.
 DATA_FILE = "tasks.json"
+
+
+def _colorize(text, color_name):
+    """Return text wrapped in a color (for example "RED"), if colors are on."""
+    if not COLORS_ON:
+        return text
+    return getattr(Fore, color_name) + text + Style.RESET_ALL
 
 
 def _get_task(task_list, index):
@@ -82,7 +100,8 @@ def delete_task(task_list, index):
 def list_tasks(task_list):
     """Print every task with its number, status, title, and due date.
 
-    Tasks that are past their due date and not completed are flagged OVERDUE.
+    Overdue tasks are shown in red with an OVERDUE flag, and completed
+    tasks are shown in green (when colorama is installed).
     """
     if not task_list:
         print("Your to-do list is empty.")
@@ -91,7 +110,9 @@ def list_tasks(task_list):
     for number, task in enumerate(task_list, start=1):
         line = f"{number}. {task}"
         if is_overdue(task):
-            line += "  *** OVERDUE ***"
+            line = _colorize(line + "  *** OVERDUE ***", "RED")
+        elif task.completed:
+            line = _colorize(line, "GREEN")
         print(line)
 
 
