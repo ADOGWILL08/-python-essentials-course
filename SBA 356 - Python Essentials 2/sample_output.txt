@@ -1,0 +1,189 @@
+PS D:\PERSCHOLAS\PYTHON ESSENTIALS\CLASS WORK STUFF AND PROJECTS\REPOSITORIES\python-essentials\SBA 356 - Python Essentials 2> python main.py
+Loaded 4 task(s) from tasks.json.
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: A
+Task title: Review notes
+Due date (YYYY-MM-DD, or press Enter for none): 2026-11-10
+Added: [-] Review notes (due 2026-11-10)
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: L
+1. [-] Submit assignment (due 2025-03-10)  *** OVERDUE ***
+2. [X] Read chapter 5 (due 2026-10-25)
+3. [X] Call dentist (due 2026-10-30)
+4. [-] Write report (due 2026-11-05)
+5. [-] Review notes (due 2026-11-10)
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: C
+1. [-] Submit assignment (due 2025-03-10)  *** OVERDUE ***
+2. [X] Read chapter 5 (due 2026-10-25)
+3. [X] Call dentist (due 2026-10-30)
+4. [-] Write report (due 2026-11-05)
+5. [-] Review notes (due 2026-11-10)
+Enter the number of the task to complete: $
+Error: please enter a whole number, like 2.
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: D
+1. [-] Submit assignment (due 2025-03-10)  *** OVERDUE ***
+2. [X] Read chapter 5 (due 2026-10-25)
+3. [X] Call dentist (due 2026-10-30)
+4. [-] Write report (due 2026-11-05)
+5. [-] Review notes (due 2026-11-10)
+Enter the number of the task to delete: 2
+Deleted: [X] Read chapter 5 (due 2026-10-25)
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: L
+1. [-] Submit assignment (due 2025-03-10)  *** OVERDUE ***
+2. [X] Call dentist (due 2026-10-30)
+3. [-] Write report (due 2026-11-05)
+4. [-] Review notes (due 2026-11-10)
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: Q
+Save your tasks to a file before quitting? (Y/N): Y
+Tasks saved to tasks.json.
+Goodbye!
+PS D:\PERSCHOLAS\PYTHON ESSENTIALS\CLASS WORK STUFF AND PROJECTS\REPOSITORIES\python-essentials\SBA 356 - Python Essentials 2> python.main.py
+python.main.py : The term 'python.main.py' is not 
+recognized as the name of a cmdlet, function, script file, 
+or operable program. Check the spelling of the name, or if 
+a path was included, verify that the path is correct and 
+try again.
+At line:1 char:1
++ python.main.py
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (python.main. 
+   py:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS D:\PERSCHOLAS\PYTHON ESSENTIALS\CLASS WORK STUFF AND PROJECTS\REPOSITORIES\python-essentials\SBA 356 - Python Essentials 2> python main.py
+Loaded 4 task(s) from tasks.json.
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: L
+1. [-] Submit assignment (due 2025-03-10)  *** OVERDUE ***
+2. [X] Call dentist (due 2026-10-30)
+3. [-] Write report (due 2026-11-05)
+4. [-] Review notes (due 2026-11-10)
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: Q
+Save your tasks to a file before quitting? (Y/N): N
+Tasks were not saved.
+Goodbye!
+PS D:\PERSCHOLAS\PYTHON ESSENTIALS\CLASS WORK STUFF AND PROJECTS\REPOSITORIES\python-essentials\SBA 356 - Python Essentials 2> 
+
+=== Extra run: completing a task ===
+
+Loaded 4 task(s) from tasks.json.
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: 1. [-] Submit assignment (due 2025-03-10)  *** OVERDUE ***
+2. [X] Call dentist (due 2026-10-30)
+3. [-] Write report (due 2026-11-05)
+4. [-] Review notes (due 2026-11-10)
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: 1. [-] Submit assignment (due 2025-03-10)  *** OVERDUE ***
+2. [X] Call dentist (due 2026-10-30)
+3. [-] Write report (due 2026-11-05)
+4. [-] Review notes (due 2026-11-10)
+Enter the number of the task to complete: Task marked as completed.
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: 1. [-] Submit assignment (due 2025-03-10)  *** OVERDUE ***
+2. [X] Call dentist (due 2026-10-30)
+3. [X] Write report (due 2026-11-05)
+4. [-] Review notes (due 2026-11-10)
+
+===== To-Do List Manager =====
+(A) Add a new task
+(C) Mark a task as completed
+(D) Delete a task
+(L) List all tasks
+(Q) Quit
+==============================
+
+Choose an option: Save your tasks to a file before quitting? (Y/N): Tasks were not saved.
+Goodbye!
